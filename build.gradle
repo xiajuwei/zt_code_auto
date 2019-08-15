@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.etc.icb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.59'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.1.7.RELEASE'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+    compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.28'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+
+
+}
