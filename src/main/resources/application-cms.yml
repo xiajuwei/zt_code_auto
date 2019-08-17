@@ -1,17 +1,17 @@
 spring:
   datasource:
-    url: jdbc:mysql://11.12.12.203:3306/zcccmsdevdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-    username: zcccmsdevdb
+    url: jdbc:mysql://11.12.12.203:3306/zccuserdevdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: zccuserdevdb
     password: 123456
 #    username: root
 #    password: DpgZ7jMoro*<
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-schema: zcccmsdevdb
+schema: zccuserdevdb
 output.dir: E:/zt-auto
 template.dir:
-table.include: mechanism_name_config
+table.include: mechanism_bill
 table.ignored:
 # boss-base 内基础bean的包
 #common.bean.package: cn.victorplus.boss.pay.paycore.mapper.base

@@ -49,9 +49,9 @@ public class TableService {
             if (propertyTypeSet.contains("BigDecimal")) {
                 data.getImportBeanList().add("java.math.BigDecimal");
             }
-            if (propertyTypeSet.contains("Date")) {
-                data.getImportBeanList().add("java.util.Date");
-            }
+//            if (propertyTypeSet.contains("Date")) {
+//                data.getImportBeanList().add("java.util.Date");
+//            }
 
 
 

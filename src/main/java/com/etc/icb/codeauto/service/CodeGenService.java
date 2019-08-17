@@ -54,15 +54,18 @@ public class CodeGenService {
             rootMap.put("table", table);
             rootMap.put("cfg", genConf);
 
-            File baseBeanTemplate = ResourceUtils.getFile("classpath:templates/ssi/bean.ftl");
+            File beanBeanTemplate = ResourceUtils.getFile("classpath:templates/ssi/bean.ftl");
+            File beanBeanDtoTemplate = ResourceUtils.getFile("classpath:templates/ssi/beanDto.ftl");
             File beanMapperTemplate = ResourceUtils.getFile("classpath:templates/ssi/bean_mapper.ftl");
             File beanMapperXmlTemplate = ResourceUtils.getFile("classpath:templates/ssi/bean_mapper_xml.ftl");
 
-            FileWriter baseBeanWriter = new FileWriter(beanDbBeanPackage.getAbsolutePath() + "/" + table.getBeanName() + ".java");
+            FileWriter beanBeanWriter = new FileWriter(beanDbBeanPackage.getAbsolutePath() + "/" + table.getBeanName() + ".java");
+            FileWriter beanBeanDtoWriter = new FileWriter(beanDbBeanPackage.getAbsolutePath() + "/" + table.getBeanName() + "Dto.java");
             FileWriter beanMapperWriter = new FileWriter(beanMapperPackage.getAbsolutePath() + "/" + table.getBeanName() + "Mapper.java");
             FileWriter beanMapperXmlWriter = new FileWriter(beanMapperXmlPackage.getAbsolutePath() + "/" + table.getBeanName() + "Mapper.xml");
 
-            FreemarkerUtil.flushData(baseBeanTemplate.getAbsolutePath(), baseBeanWriter, rootMap);
+            FreemarkerUtil.flushData(beanBeanTemplate.getAbsolutePath(), beanBeanWriter, rootMap);
+            FreemarkerUtil.flushData(beanBeanDtoTemplate.getAbsolutePath(), beanBeanDtoWriter, rootMap);
             FreemarkerUtil.flushData(beanMapperTemplate.getAbsolutePath(), beanMapperWriter, rootMap);
             FreemarkerUtil.flushData(beanMapperXmlTemplate.getAbsolutePath(), beanMapperXmlWriter, rootMap);
         }

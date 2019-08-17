@@ -12,6 +12,7 @@ public class Column {
     private String columnComment;
     private String propertyName;
     private String propertyType;
+    private String oldPropertyType = "type";
 
     public String getPropertyName() {
         if (columnName.contains("_")) {
@@ -49,7 +50,8 @@ public class Column {
             propertyType = "BigDecimal";
         }
         if ("timestamp".equals(dataType) || "date".equals(dataType) || "datetime".endsWith(dataType)) {
-            propertyType = "Date";
+            propertyType = "Long";
+            oldPropertyType = "Date";
         }
 
         if (StrUtil.isBlank(propertyType)) {
