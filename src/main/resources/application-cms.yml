@@ -11,11 +11,11 @@ spring:
 schema: zccuserdevdb
 output.dir: E:/zt-auto
 template.dir:
-table.include: mechanism_bill
+table.include: mechanism_column_config
 table.ignored:
 # boss-base 内基础bean的包
 #common.bean.package: cn.victorplus.boss.pay.paycore.mapper.base
 #common.mapper.package: cn.victorplus.boss.pay.paycore.mapper
 # 生成的项目的包名
-bean.db.bean.package: com.ect.icb.cms.domain.pojo
-bean.mapper.package: com.ect.icb.cms.data.mapper
+bean.db.bean.package: com.ect.icb.manage.domain.pojo
+bean.mapper.package: com.ect.icb.manage.data.mapper
