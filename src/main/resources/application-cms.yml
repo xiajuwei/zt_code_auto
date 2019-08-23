@@ -11,7 +11,7 @@ spring:
 schema: zccuserdevdb
 output.dir: E:/zt-auto
 template.dir:
-table.include: mechanism_column_config
+table.include: code_config
 table.ignored:
 # boss-base 内基础bean的包
 #common.bean.package: cn.victorplus.boss.pay.paycore.mapper.base
