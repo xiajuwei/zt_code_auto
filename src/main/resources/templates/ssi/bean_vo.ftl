@@ -6,7 +6,7 @@ import lombok.Data;
 
 <#if table.importBeanList??>
     <#list table.importBeanList as item>
-import ${item};
+        import ${item};
     </#list>
 </#if>
 
@@ -17,22 +17,13 @@ please DO NOT modify this file
 **/
 @Data
 @ApiModel("${table.tableComment}")
-public class ${table.beanName}Dto{
+public class ${table.beanName}Vo{
+
 <#list table.propertyList as col>
-    <#if col.columnComment?has_content>
+<#if !(col.propertyName =='modifyDate'|| col.propertyName =='createDate' || col.propertyName =='delFlag')>
     @ApiModelProperty("${col.columnComment}")
-    </#if>
     private ${col.propertyType} ${col.propertyName};
+</#if>
 </#list>
 
-<#--<#list table.propertyList as col>-->
-<#--    public ${col.propertyType} get${col.propertyName?cap_first}() {-->
-<#--    return ${col.propertyName};-->
-<#--    }-->
-
-<#--    public void set${col.propertyName?cap_first}(${col.propertyType} ${col.propertyName}) {-->
-<#--    this.${col.propertyName} = ${col.propertyName};-->
-<#--    }-->
-
-<#--</#list>-->
 }

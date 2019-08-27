@@ -116,11 +116,36 @@
 
     <!--根据主键删除实体-->
     <delete id="deleteById">
-        UPDATE ${table.tableName} set del_flag = 'D' WHERE <#list table.pkColumnList as pk><#if pk_index gt 0> AND</#if> ${pk} = <#noparse>#{</#noparse>${table.pkPropertyList[pk_index]}<#noparse>}</#noparse></#list>
+        UPDATE ${table.tableName}
+        <set>
+        <#list crud_columns as col>
+        <#if col.columnName =='operator_id'>
+        <if test="${col.propertyName} != null">
+            `${col.columnName}` = <#noparse>#{</#noparse>${col.propertyName}<#noparse>}</#noparse>,
+        </if>
+        </#if>
+        <#if col.columnName =='del_flag'>
+            `${col.columnName}` = <#noparse>'D'</#noparse>
+        </#if>
+        </#list>
+        </set>
+        WHERE <#list table.pkColumnList as pk><#if pk_index gt 0> AND</#if> ${pk} = <#noparse>#{</#noparse>${table.pkPropertyList[pk_index]}<#noparse>}</#noparse></#list>
     </delete>
     <!--根据主键删除批量实体-->
     <delete id="batchDeleteById" parameterType="java.util.List">
-        UPDATE ${table.tableName} set del_flag = 'D'
+        UPDATE ${table.tableName}
+        <set>
+        <#list crud_columns as col>
+        <#if col.columnName =='operator_id'>
+            <if test="${col.propertyName} != null">
+                `${col.columnName}` = <#noparse>#{</#noparse>${col.propertyName}<#noparse>}</#noparse>,
+            </if>
+        </#if>
+        <#if col.columnName =='del_flag'>
+            `${col.columnName}` = <#noparse>'D'</#noparse>
+        </#if>
+        </#list>
+        </set>
         WHERE <#list table.pkColumnList as pk><#if pk_index gt 0> AND</#if> ${pk} IN
         <foreach collection="listId" index="index" item="item" open="(" separator="," close=")">
             <#noparse>#{item}</#noparse>

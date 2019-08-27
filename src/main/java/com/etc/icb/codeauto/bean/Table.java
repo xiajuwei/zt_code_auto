@@ -31,6 +31,7 @@ public class Table {
             }
         } else {
             beanName = tableName;
+            lowerBeanName = tableName;
         }
         beanName = StrUtil.capitalize(beanName);
         return beanName;
