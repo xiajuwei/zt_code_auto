@@ -177,7 +177,11 @@
             </#if>
             </#list>
         </where>
-
-        ORDER BY id DESC
+        <if test="sortColumn ==null || sortColumn ==''">
+            ORDER BY id DESC
+        </if>
+        <if test="sortColumn !=null and sortColumn !=''">
+            ORDER BY ${sortColumn} ${sortType}
+        </if>
     </select>
 </mapper>

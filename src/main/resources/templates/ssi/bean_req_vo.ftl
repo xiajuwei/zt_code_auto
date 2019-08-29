@@ -13,6 +13,10 @@ public class ${table.beanName}ReqDto{
     private Integer pageNum;
     @ApiModelProperty(value = "每页的数量", example = "15", required = true)
     private Integer pageSize;
+    @ApiModelProperty("排序字段")
+    private String sortColumn;
+    @ApiModelProperty("排序方式")
+    private String sortType;
 
 
 }
