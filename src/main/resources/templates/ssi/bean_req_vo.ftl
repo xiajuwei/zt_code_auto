@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @ApiModel("${table.tableComment}")
-public class ${table.beanName}ReqDto{
+public class ${table.beanName}ReqVo{
 
     @ApiModelProperty(value = "当前页", example = "1", required = true)
     private Integer pageNum;

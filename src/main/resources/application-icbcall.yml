@@ -1,21 +1,21 @@
 spring:
   datasource:
-    url: jdbc:mysql://11.12.12.203:3306/zccuserdevdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-    username: zccuserdevdb
+    url: jdbc:mysql://11.8.38.41:10001/zccicbcalldevdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: zccicbcalldevdb
     password: 123456
 #    username: root
 #    password: DpgZ7jMoro*<
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-schema: zccuserdevdb
+schema: zccicbcalldevdb
 output.dir: E:/zt-auto
 template.dir:
-table.include: file_transfer
+table.include: task
 table.ignored:
 # boss-base 内基础bean的包
 #common.bean.package: cn.victorplus.boss.pay.paycore.mapper.base
 #common.mapper.package: cn.victorplus.boss.pay.paycore.mapper
 # 生成的项目的包名
-bean.db.bean.package: com.ect.icb.manage.domain.entity
-bean.mapper.package: com.ect.icb.manage.data.mapper
+bean.db.bean.package: com.ect.icb.call.domain.entity
+bean.mapper.package: com.ect.icb.call.data.mapper

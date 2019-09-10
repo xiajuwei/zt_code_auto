@@ -17,7 +17,7 @@ please DO NOT modify this file
 **/
 @Data
 @ApiModel("${table.tableComment}")
-public class ${table.beanName}Dto{
+public class ${table.beanName}ReqDto{
 
     @ApiModelProperty(value = "当前页", example = "1", required = true)
     private Integer pageNum;

@@ -181,7 +181,7 @@
             ORDER BY id DESC
         </if>
         <if test="sortColumn !=null and sortColumn !=''">
-            ORDER BY ${sortColumn} ${sortType}
+            ORDER BY <#noparse>${sortColumn}</#noparse> <#noparse>${sortType}</#noparse>
         </if>
     </select>
 </mapper>
