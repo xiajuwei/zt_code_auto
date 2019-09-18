@@ -1,7 +1,7 @@
 <#assign crud_columns = [] />
 <#assign columns = table.columnList />
 <#list columns as col>
-    <#if !(col.columnName =='id' || col.columnName == 'create_date' || col.columnName == 'modify_date')>
+    <#if !(col.columnName =='id' || col.columnName == 'create_time' || col.columnName == 'modify_time')>
         <#assign crud_columns = crud_columns + [col] />
     </#if>
 </#list>

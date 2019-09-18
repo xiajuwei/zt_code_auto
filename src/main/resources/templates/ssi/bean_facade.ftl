@@ -2,7 +2,7 @@ package ${cfg.beanMapperPackage};
 
 import org.springframework.cloud.openfeign.FeignClient;
 
-@FeignClient(value = "icb2-manage", path = "", contextId = "")
+@FeignClient(value = "icb2-outbound", path = "", contextId = "")
 public interface ${table.beanName}Facade{
     /**
      * 添加
@@ -19,7 +19,7 @@ public interface ${table.beanName}Facade{
      * 根据主键删除
      */
     @DeleteMapping("/deleteById")
-    Integer deleteById(@RequestParam("id") Long id, @RequestParam("operatorId") String operatorId) throws BaseException;
+    Integer deleteById( Long id, String operatorId) throws BaseException;
     /**
     * 分页查询
     */

@@ -15,8 +15,7 @@ public interface ${table.beanName}Repository{
     /**
      * 根据主键删除
      */
-    Integer deleteById(@Param("id") Long id, @Param("operatorId") String operatorId);
-
+    Integer deleteById( Long id,  String operatorId);
 
 
 }

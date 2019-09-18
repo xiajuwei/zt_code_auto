@@ -3,7 +3,7 @@ package ${cfg.beanMapperPackage};
 @RestController
 @RequestMapping("")
 @Api(tags = "")
-public class ${table.beanName}Facade{
+public class ${table.beanName}Controller{
     @Resource
     private ${table.beanName}Client ${table.lowerBeanName}Client;
 

@@ -14,9 +14,11 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.netty:netty-buffer:4.1.39.Final'
+
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.59'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.60'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.1.7.RELEASE'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'

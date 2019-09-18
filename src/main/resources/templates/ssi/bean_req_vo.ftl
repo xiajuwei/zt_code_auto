@@ -15,7 +15,7 @@ public class ${table.beanName}ReqVo{
     private Integer pageSize;
     @ApiModelProperty("排序字段")
     private String sortColumn;
-    @ApiModelProperty("排序方式")
+    @ApiModelProperty(value = "排序方式（'asc'： 正序，'desc'：倒序）")
     private String sortType;
 
 

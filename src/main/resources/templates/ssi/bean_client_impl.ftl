@@ -9,7 +9,7 @@ public class ${table.beanName}ClientImpl implements ${table.beanName}Client {
 
     @Override
     public Integer add(${table.beanName}Vo ${table.lowerBeanName}Vo) throws BaseException{
-        ${table.beanName}Dto ${table.lowerBeanName}Dto = new ${table.beanName}Dto;
+        ${table.beanName}Dto ${table.lowerBeanName}Dto = new ${table.beanName}Dto();
         BeanUtils.copyProperties(${table.lowerBeanName}Vo, ${table.lowerBeanName}Dto);
         ${table.lowerBeanName}Dto.setUuid(UUID.randomUUID().toString());
         return ${table.lowerBeanName}Facade.add(${table.lowerBeanName}Dto);

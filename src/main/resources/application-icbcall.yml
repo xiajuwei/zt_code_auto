@@ -11,11 +11,11 @@ spring:
 schema: zccicbcalldevdb
 output.dir: E:/zt-auto
 template.dir:
-table.include: task
+table.include: phone_call_list
 table.ignored:
 # boss-base 内基础bean的包
 #common.bean.package: cn.victorplus.boss.pay.paycore.mapper.base
 #common.mapper.package: cn.victorplus.boss.pay.paycore.mapper
 # 生成的项目的包名
-bean.db.bean.package: com.ect.icb.call.domain.entity
-bean.mapper.package: com.ect.icb.call.data.mapper
+bean.db.bean.package: com.ect.icb.outbound.domain.entity
+bean.mapper.package: com.ect.icb.outbound.data.mapper

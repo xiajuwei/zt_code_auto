@@ -35,11 +35,11 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
 
     @Override
     public PageData listByPage(${table.beanName}ReqDto ${table.lowerBeanName}ReqDto) throws BaseException{
-    ${table.beanName}Req ${table.lowerBeanName}Req = new ${table.beanName}();
+    ${table.beanName}Req ${table.lowerBeanName}Req = new ${table.beanName}Req();
     //请求dto 转换
     BeanUtils.copyProperties(${table.lowerBeanName}ReqDto, ${table.lowerBeanName}Req);
     //设置分页参数
-    Page page = PageMethod.startPage(${table.lowerBeanName}ReqDto.getPageNum(), ${table.lowerBeanName}ReqDto.getPageSize());
+    Page page = PageMethod.startPage(${table.lowerBeanName}Req.getPageNum(), ${table.lowerBeanName}Req.getPageSize());
     //排序字段驼峰转下划线
     if (StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortColumn()) && StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortType())) {
         String sortColumn = ToolUtils.humpToLine(${table.lowerBeanName}Req.getSortColumn());

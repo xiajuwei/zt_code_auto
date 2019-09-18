@@ -4,9 +4,9 @@ import ${cfg.beanDbBeanPackage}.${table.beanName};
 
 
 @Component
-public class ${table.beanName}RepositoryImpl implements${table.beanName}Repository {
+public class ${table.beanName}RepositoryImpl implements ${table.beanName}Repository {
     @Resource
-    private${table.beanName}Mapper ${table.lowerBeanName}Mapper;
+    private ${table.beanName}Mapper ${table.lowerBeanName}Mapper;
 
     @Override
     public Integer add(${table.beanName} ${table.lowerBeanName}) {
@@ -24,7 +24,7 @@ public class ${table.beanName}RepositoryImpl implements${table.beanName}Reposito
     }
 
     @Override
-    public List<Announcement> listByPage(${table.beanName}Req ${table.lowerBeanName}Req) {
+    public List<${table.beanName}> listByPage(${table.beanName}Req ${table.lowerBeanName}Req) {
     return ${table.lowerBeanName}Mapper.listByPage(${table.lowerBeanName}Req);
     }
 
