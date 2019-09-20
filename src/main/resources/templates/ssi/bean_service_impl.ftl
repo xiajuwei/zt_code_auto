@@ -35,22 +35,22 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
 
     @Override
     public PageData listByPage(${table.beanName}ReqDto ${table.lowerBeanName}ReqDto) throws BaseException{
-    ${table.beanName}Req ${table.lowerBeanName}Req = new ${table.beanName}Req();
-    //请求dto 转换
-    BeanUtils.copyProperties(${table.lowerBeanName}ReqDto, ${table.lowerBeanName}Req);
-    //设置分页参数
-    Page page = PageMethod.startPage(${table.lowerBeanName}Req.getPageNum(), ${table.lowerBeanName}Req.getPageSize());
-    //排序字段驼峰转下划线
-    if (StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortColumn()) && StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortType())) {
-        String sortColumn = ToolUtils.humpToLine(${table.lowerBeanName}Req.getSortColumn());
-        ${table.lowerBeanName}Req.setSortColumn(sortColumn);
-    }
-    List<${table.beanName}> ${table.lowerBeanName}List = ${table.lowerBeanName}Repository.listByPage(${table.lowerBeanName}Req);
-    List<${table.beanName}Dto> ${table.lowerBeanName}DtoList = new ArrayList<>();
-        ${table.lowerBeanName}List.stream().forEach(${table.lowerBeanName} -> {
-        ${table.beanName}Dto ${table.lowerBeanName}Dto = new ${table.beanName}Dto();
-        BeanUtils.copyProperties(${table.lowerBeanName}, ${table.lowerBeanName}Dto);
-        ${table.lowerBeanName}DtoList.add(${table.lowerBeanName}Dto);
+        ${table.beanName}Req ${table.lowerBeanName}Req = new ${table.beanName}Req();
+        //请求dto 转换
+        BeanUtils.copyProperties(${table.lowerBeanName}ReqDto, ${table.lowerBeanName}Req);
+        //设置分页参数
+        Page page = PageMethod.startPage(${table.lowerBeanName}Req.getPageNum(), ${table.lowerBeanName}Req.getPageSize());
+        //排序字段驼峰转下划线
+        if (StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortColumn()) && StringUtils.isNotBlank(${table.lowerBeanName}Req.getSortType())) {
+            String sortColumn = ToolUtils.humpToLine(${table.lowerBeanName}Req.getSortColumn());
+            ${table.lowerBeanName}Req.setSortColumn(sortColumn);
+        }
+        List<${table.beanName}> ${table.lowerBeanName}List = ${table.lowerBeanName}Repository.listByPage(${table.lowerBeanName}Req);
+        List<${table.beanName}Dto> ${table.lowerBeanName}DtoList = new ArrayList<>();
+            ${table.lowerBeanName}List.stream().forEach(${table.lowerBeanName} -> {
+            ${table.beanName}Dto ${table.lowerBeanName}Dto = new ${table.beanName}Dto();
+            BeanUtils.copyProperties(${table.lowerBeanName}, ${table.lowerBeanName}Dto);
+            ${table.lowerBeanName}DtoList.add(${table.lowerBeanName}Dto);
         });
         PageData pageData = new PageData();
         pageData.setPageNum(${table.lowerBeanName}Req.getPageNum());
@@ -58,5 +58,5 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
         pageData.setTotal(page.getTotal());
         pageData.setList(${table.lowerBeanName}DtoList);
         return pageData;
-        }
     }
+}
