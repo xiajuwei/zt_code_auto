@@ -50,7 +50,7 @@
     <insert id="add" useGeneratedKeys="true" keyProperty="id"
             parameterType="${cfg.beanDbBeanPackage}.${table.beanName}">
         INSERT INTO ${table.tableName}
-            (
+        <trim prefix="(" suffix=")" suffixOverrides=",">
         <#list crud_columns as col>
             <#if col.columnName!='del_flag'>
         <if test="${col.propertyName} != null">
@@ -61,10 +61,9 @@
             `${col.columnName}`<#sep>,
             </#if>
         </#list>
-
-            )
+        </trim>
         VALUES
-            (
+        <trim prefix="(" suffix=")" suffixOverrides=",">
         <#list crud_columns as col>
             <#if col.columnName!='del_flag'>
         <if test="${col.propertyName} != null">
@@ -80,8 +79,7 @@
             'A'<#sep>,
             </#if>
         </#list>
-
-            )
+        </trim>
     </insert>
 
     <!--根据主键更新实体信息-->
