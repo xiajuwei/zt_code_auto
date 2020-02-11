@@ -9,7 +9,7 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
     private RedisDistributeLock redisDistributeLock;
 
     @Override
-    public Integer add(${table.beanName}Dto ${table.lowerBeanName}Dto) throws BaseException{
+    public Integer add(${table.beanName}Dto ${table.lowerBeanName}Dto){
     boolean lock = redisDistributeLock.tryLock(${table.lowerBeanName}Dto.getUuid(), "", 60, 1);
         if (lock) {
         ${table.beanName} ${table.lowerBeanName} = new ${table.beanName}();
@@ -22,7 +22,7 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
     }
 
     @Override
-    public Integer updateById(${table.beanName}Dto ${table.lowerBeanName}Dto) throws BaseException{
+    public Integer updateById(${table.beanName}Dto ${table.lowerBeanName}Dto){
     ${table.beanName} ${table.lowerBeanName} = new ${table.beanName}();
     BeanUtils.copyProperties(${table.lowerBeanName}Dto, ${table.lowerBeanName});
     return ${table.lowerBeanName}Repository.updateById(${table.lowerBeanName});
@@ -34,7 +34,7 @@ public class ${table.beanName}ServiceImpl implements ${table.beanName}Service {
     }
 
     @Override
-    public PageData listByPage(${table.beanName}ReqDto ${table.lowerBeanName}ReqDto) throws BaseException{
+    public PageData listByPage(${table.beanName}ReqDto ${table.lowerBeanName}ReqDto){
         ${table.beanName}Req ${table.lowerBeanName}Req = new ${table.beanName}Req();
         //请求dto 转换
         BeanUtils.copyProperties(${table.lowerBeanName}ReqDto, ${table.lowerBeanName}Req);
